@@ -113,7 +113,18 @@ body {
     background-repeat: repeat;
     background-position: center;
 }
-
+main {
+    display: grid;
+}
+article{
+    margin: 70px auto;
+    background-color: #fce6f5;
+    border-radius: 10px;
+    border: #fabce1 15px solid;
+    float: left;
+    position: fixed;
+    padding: 20px;
+}
 a{
     font-family: "RifficFree-Bold",sans-serif;
     text-decoration: none;
