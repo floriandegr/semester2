@@ -1,7 +1,49 @@
 @font-face{
-    font-family: "Hot Mustard", sans-serif;
+    font-family: "Hot Mustard";
     src: url(fonts/Hot_Mustard.ttf);
+    font-weight: bold;
 }
 h1{
-    font-family: "Hot Mustard", sans-serif;
+    transform: skewY(-10deg);
+    font-family: "Hot Mustard",sans-serif;
+    font-size: 55px;
+    margin-top: 60px;
+    line-height: 50px;
+    margin-bottom: 0;
+}
+header{
+    text-align: center;
+    border-radius: 100%;
+    border: #fabce1 10px solid;
+    margin-left: 600px;
+    margin-right: 600px;
+    background-color: #fce6f5;
+    height: 260px;
+    width: 260px;
+}
+h1 span{
+    padding: 0;
+    margin: -10px;
+    display: inline-block;
+}
+h1 span:nth-child(5n+1){
+    color: #f47b83;
+}
+h1 span:nth-child(5n+2){
+    color: #f7bfe2;
+}
+h1 span:nth-child(5n+3){
+    color: #b5ffa6;
+}
+h1 span:nth-child(5n+4){
+    color: #bf92f7;
+}
+h1 span:nth-child(5n){
+    color: #cdf4ff;
+}
+h1 span:nth-child(3){
+    padding-right: 1rem;
+}
+h1 span:nth-child(6){
+    padding-right: 1rem;
 }
