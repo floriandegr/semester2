@@ -3,23 +3,71 @@
     src: url(fonts/Hot_Mustard.ttf);
     font-weight: bold;
 }
+@font-face{
+    font-family: "DearJoe";
+    src: url(fonts/DJ5CTRIAL.ttf);
+}
+@font-face{
+    font-family: "Aller_Rg";
+    src: url(fonts/Aller_Rg.ttf);
+}
+@font-face{
+    font-family: "F25_Bank_Printer";
+    src: url(fonts/F25_Bank_Printer.ttf);
+}
+@font-face{
+    font-family: "Halogen";
+    src: url(fonts/Halogen.ttf);
+}
+@font-face{
+    font-family: "m1";
+    src: url(fonts/m1.ttf);
+}
+@font-face{
+    font-family: "n1";
+    src: url(fonts/n1.ttf);
+}
+@font-face{
+    font-family: "RifficFree-Bold";
+    src: url(fonts/RifficFree-Bold.ttf);
+}
+@font-face{
+    font-family: "s1";
+    src: url(fonts/s1.ttf);
+}
+@font-face{
+    font-family: "Vera";
+    src: url(fonts/Vera.ttf);
+}
+@font-face{
+    font-family: "y1";
+    src: url(fonts/y1.ttf);
+}
+@font-face{
+    font-family: "y2";
+    src: url(fonts/y2.ttf);
+}
+@font-face{
+    font-family: "y3";
+    src: url(fonts/y3.ttf);
+}
 h1{
     transform: skewY(-10deg);
     font-family: "Hot Mustard",sans-serif;
     font-size: 55px;
     margin-top: 60px;
     line-height: 50px;
-    margin-bottom: 0;
+    margin-bottom: 30px;
 }
 header{
     text-align: center;
     border-radius: 100%;
     border: #fabce1 10px solid;
-    margin-left: 600px;
-    margin-right: 600px;
+    margin: auto;
     background-color: #fce6f5;
     height: 260px;
     width: 260px;
+
 }
 h1 span{
     padding: 0;
@@ -46,4 +94,27 @@ h1 span:nth-child(3){
 }
 h1 span:nth-child(6){
     padding-right: 1rem;
+}
+header p{
+    font-family: "DearJoe",sans-serif;
+    font-size: 20px;
+    background-color: white;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 0;
+    width: 170px;
+    height: 30px;
+    text-align: center;
+    margin: auto;
+    transform: skewY(-8deg);
+}
+body {
+    background-image: url("../images/pink_balls_background.png");
+    background-repeat: repeat;
+    background-position: center;
+}
+a{
+    font-family: "F25_Bank_Printer",sans-serif;
+    text-decoration: none;
+    font-size: 30px;
 }
