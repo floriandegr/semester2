@@ -1,0 +1,7 @@
+@font-face{
+    font-family: "Hot Mustard", sans-serif;
+    src: url(fonts/Hot_Mustard.ttf);
+}
+h1{
+    font-family: "Hot Mustard", sans-serif;
+}
