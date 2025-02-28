@@ -1,10 +1,12 @@
 const setup = () => {
     let button=document.getElementById("button");
+
     button.addEventListener("click", update);
 }
 const update = () => {
     let textbox=document.getElementById("textbox");
     let text = textbox.value;
+
     let finText = "";
     for (let i = 0; i < text.length; i++) {
         if(text.charAt(i) !== " ") {
