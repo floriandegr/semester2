@@ -196,7 +196,7 @@ h2{
     text-decoration: underline;
 }
 li{
-
+    margin-bottom: 5px;
     list-style: none;
 }
 footer
