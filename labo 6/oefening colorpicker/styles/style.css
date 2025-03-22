@@ -1,0 +1,28 @@
+div {
+    display: block;
+    padding: 10px;
+}
+.value
+{
+    display: inline-block;
+}
+#page
+{
+    border: lightgray solid 2px;
+    border-radius: 5px;
+}
+.color {
+    display: inline-block;
+    border-radius: 5px;
+
+    height: 200px;
+    width: 200px;
+    border: black solid 2px;
+}
+main {
+    display: inline-block;
+    float: left;
+}
+.cross{
+    float: right;
+}
