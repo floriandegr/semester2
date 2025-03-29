@@ -1,0 +1,13 @@
+#playField{
+    height: 800px;
+    width: 600px;
+    // aanvullen met hoogte en breedte
+}
+.hidden
+{
+    display: none;
+}
+
+#target {
+    position: absolute;
+}
