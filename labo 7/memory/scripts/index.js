@@ -13,17 +13,27 @@ const setup = () => {
         global.array_kaart.push("images/kaart" + (1+i) +".png");
         global.array_kaart.push("images/kaart" + (1+i) +".png");
     }
+    addCards()
     addEvents()
+
     global.array_kaart.sort(() => Math.random() - 0.5);
 }
-
-const addEvents =() =>{
+const addCards =() =>{
+    for(let i = 0, len = global.AANTAL_KAARTEN*2; i < len; i++) {
+        let div = document.createElement("div");
+        div.classList.add("kaart");
+        div.innerHTML = "<img src='images/achterkant.png' alt=" +i+ "/>"
+        let playField = document.getElementsByClassName("playField");
+        playField[0].appendChild(div);
+    }
+}
+const addEvents = () => {
     let img = document.getElementsByClassName('kaart');
     for (let i = 0, len = img.length; i < len; i++) {
         img[i].addEventListener('click', draaiOm);
     }
 }
-const removeEvents = () =>{
+const removeEvents = () => {
     let img = document.getElementsByClassName('kaart');
     for (let i = 0, len = img.length; i < len; i++) {
         img[i].removeEventListener('click', draaiOm);
@@ -31,7 +41,7 @@ const removeEvents = () =>{
 }
 const draaiOm = () => {
 
-    if(!event.target.classList.contains('hidden') || event.target.getAttribute("src") !== "images/achterkant.png"){
+    if (!event.target.classList.contains('hidden') || event.target.getAttribute("src") !== "images/achterkant.png") {
         removeEvents();
         let child = event.target;
         let position = child.getAttribute("alt")
@@ -46,17 +56,16 @@ const checkDubbels = () => {
     let img1 = null;
     let img2 = null;
     for (let i = 0, len = img.length; i < len; i++) {
-        if((img[i].getAttribute("src") !== "images/achterkant.png") && !img[i].classList.contains('hidden')) {
-            if(img1 === null){
+        if ((img[i].getAttribute("src") !== "images/achterkant.png") && !img[i].classList.contains('hidden')) {
+            if (img1 === null) {
                 img1 = img[i];
-            }
-            else {
+            } else {
                 img2 = img[i];
             }
         }
     }
-    if(img1 === null || img2 === null){}
-    else  if(img1.getAttribute("src") === img2.getAttribute("src")) {
+    if (img1 === null || img2 === null) {
+    } else if (img1.getAttribute("src") === img2.getAttribute("src")) {
 
         img1.classList.add('found');
         img2.classList.add('found');
@@ -68,11 +77,10 @@ const checkDubbels = () => {
             img1.classList.add('hidden');
             img2.classList.add('hidden');
         }, 500);
-    }
-    else{
+    } else {
         img1.classList.add('wrong');
         img2.classList.add('wrong');
-        setTimeout(function() {
+        setTimeout(function () {
 
             img1.classList.remove('wrong');
             img2.classList.remove('wrong');
