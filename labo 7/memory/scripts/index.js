@@ -39,7 +39,7 @@ const removeEvents = () => {
         img[i].removeEventListener('click', draaiOm);
     }
 }
-const draaiOm = () => {
+const draaiOm = (event) => {
 
     if (!event.target.classList.contains('hidden') || event.target.getAttribute("src") !== "images/achterkant.png") {
         removeEvents();
