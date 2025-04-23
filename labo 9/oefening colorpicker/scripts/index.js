@@ -1,7 +1,19 @@
+
+
 const setup = () => {
+
     let sliders = document.getElementsByClassName("slider");
     for (let i = 0; i < sliders.length; i++) {
-        sliders[i].value = localStorage.getItem('' +i)
+        sliders[i].value = localStorage.getItem('slider ' +i)
+    }
+    update()
+
+    let colors = JSON.parse(localStorage.getItem("blocks"));
+    let length = 0;
+    if (colors == null) {length = 0;}
+    else {length = colors.length;}
+    for (let i = 0; i < length ; i++) {
+        safeBlock(colors[i]);
     }
     let button = document.getElementById("save");
     sliders[0].addEventListener("change", update);
@@ -18,10 +30,9 @@ const update = () => {
     let sliders = document.getElementsByClassName("slider");
     for (let i = 0; i < sliders.length; i++) {
         console.log(sliders[i].value);
-        localStorage.setItem(('' + i), sliders[i].value);
+        localStorage.setItem(('slider ' + i), sliders[i].value);
         document.getElementById(sliders[i].className.substring(7)).innerHTML = sliders[i].value;
-        localStorage.setItem('testKey', 'testValue');
-        console.log(localStorage.getItem('testKey'));
+
     }
 
     let r = document.getElementById("r").innerText.valueOf();
@@ -32,11 +43,10 @@ const update = () => {
     b = parseInt(b, 10);
     document.getElementById("block").style.backgroundColor= `rgb(${r}, ${g}, ${b})`;
 }
-
-const save = () => {
-    let color = document.getElementById("block").style.backgroundColor;
+const safeBlock = (color) => {
+    console.log(color);
     let block = document.createElement("div");
-    let body = document.getElementsByTagName("body")[0];
+    let body = document.getElementById("saved");
     block.classList.add("color");
     block.classList.add("saved");
     block.style.backgroundColor = color;
@@ -49,14 +59,42 @@ const save = () => {
 
     cross.addEventListener("click", remove)
     block.addEventListener("click", placeColor);
+
+}
+const save = () => {
+    let color = document.getElementById("block").style.backgroundColor;
+    console.log(color);
+    safeBlock(color);
+    saveLocal()
+}
+const saveLocal =() =>{
+    let blocks = document.getElementsByClassName("saved");
+    localStorage.removeItem("blocks")
+    let colors = []
+    for (let i = 0; i < blocks.length; i++) {
+        colors.push(blocks[i].style.backgroundColor)
+    }
+
+    localStorage.setItem("blocks",JSON.stringify(colors));
 }
 const remove = (event) => {
     event.target.parentNode.remove();
-    event.stopPropagation()
+    event.stopPropagation();
+    saveLocal()
+
+
 }
 const placeColor = (event) => {
-    document.getElementById("block").style.backgroundColor= event.target.style.backgroundColor;
-   event.stopPropagation();
+    let colors = event.target.style.backgroundColor
+    document.getElementById("block").style.backgroundColor= colors;
+    event.stopPropagation();
+    let sliders = document.getElementsByClassName("slider");
+    "rgb(128, 128, 243)"
+    for (let i = 0; i < sliders.length; i++) {
+
+    }
+
+
 
 }
 window.addEventListener("load", setup);
