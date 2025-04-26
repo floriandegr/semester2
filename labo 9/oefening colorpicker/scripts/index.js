@@ -90,9 +90,12 @@ const placeColor = (event) => {
     event.stopPropagation();
     let sliders = document.getElementsByClassName("slider");
     "rgb(128, 128, 243)"
-    for (let i = 0; i < sliders.length; i++) {
+    let colorAray = colors.split(", ")
+    sliders[0].value = colorAray[0].substring(4)
+    sliders[1].value = colorAray[1]
+    sliders[2].value = colorAray[2].substring(0,3)
 
-    }
+
 
 
 
