@@ -29,7 +29,6 @@ const setup = () => {
 const update = () => {
     let sliders = document.getElementsByClassName("slider");
     for (let i = 0; i < sliders.length; i++) {
-        console.log(sliders[i].value);
         localStorage.setItem(('slider ' + i), sliders[i].value);
         document.getElementById(sliders[i].className.substring(7)).innerHTML = sliders[i].value;
 
@@ -94,6 +93,10 @@ const placeColor = (event) => {
     sliders[0].value = colorAray[0].substring(4)
     sliders[1].value = colorAray[1]
     sliders[2].value = colorAray[2].substring(0,3)
+    for (let i = 0; i < sliders.length; i++) {
+        localStorage.setItem(('slider ' + i), sliders[i].value);
+    }
+
 
 
 
