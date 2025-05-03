@@ -23,8 +23,7 @@ const setup = () => {
     sliders[1].addEventListener("input", update);
     sliders[2].addEventListener("input", update);
     button.addEventListener("click", save);
-
-
+    
 }
 const update = () => {
     let sliders = document.getElementsByClassName("slider");
@@ -58,7 +57,6 @@ const safeBlock = (color) => {
 
     cross.addEventListener("click", remove)
     block.addEventListener("click", placeColor);
-
 }
 const save = () => {
     let color = document.getElementById("block").style.backgroundColor;
@@ -80,8 +78,6 @@ const remove = (event) => {
     event.target.parentNode.remove();
     event.stopPropagation();
     saveLocal()
-
-
 }
 const placeColor = (event) => {
     let colors = event.target.style.backgroundColor
@@ -96,11 +92,5 @@ const placeColor = (event) => {
     for (let i = 0; i < sliders.length; i++) {
         localStorage.setItem(('slider ' + i), sliders[i].value);
     }
-
-
-
-
-
-
 }
 window.addEventListener("load", setup);

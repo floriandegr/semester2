@@ -1,0 +1,37 @@
+body {
+    margin-left: 10%;
+    margin-right: 10%
+}
+#commando
+{
+    width: 100%;
+}
+#search
+{
+    width: 100%;
+    background-color: green;
+}
+.youtube {
+    background-color: red;
+}
+.google {
+    background-color: lightblue;
+}
+.instagram {
+    background-color: orange;
+}
+.twitter {
+    background-color: wheat;
+}
+.link{
+    background-color: lightgreen;
+    margin: 5px;
+}
+#sort{
+    float: right;
+    margin: 5px;
+}
+.col-4{
+
+    border-radius: 1%;
+}
